@@ -29,11 +29,30 @@ class Jogador
   }
   anosFaltando()
   {
-    let idadeAposenta = 40 - this.calculaIdade();
-    return "Faltam " + idadeAposenta + " anos para ele se aposentar."
+    if (this.posicao == "Defesa")
+    {
+      let idadeAposenta = 40 - this.calculaIdade();
+      return "Faltam " + idadeAposenta + " anos para ele se aposentar."
+    }
+    else
+    {
+      if (this.posicao == "Meio-campo")
+      {
+        let idadeAposenta = 38 - this.calculaIdade();
+        return "Faltam " + idadeAposenta + " anos para ele se aposentar."
+      }
+      else
+      {
+        if (this.posicao == "Atacante")
+        {
+          let idadeAposenta = 35 - this.calculaIdade();
+          return "Faltam " + idadeAposenta + " anos para ele se aposentar."
+        }
+      }
+    }
   }
 }
-let jogadorcaro = new Jogador("Lucca", "Zagueiro", "30/01/2006", "Brasileiro", "1.87", "78kg")
+let jogadorcaro = new Jogador("Lucca", "Defesa", "30/01/2006", "Brasileiro", "1.87", "78kg")
 console.log(jogadorcaro.mostrarAtributos())
 console.log(jogadorcaro.calculaIdade())
 console.log(jogadorcaro.anosFaltando())
